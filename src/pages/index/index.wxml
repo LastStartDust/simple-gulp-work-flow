@@ -1,0 +1,13 @@
+<view class="my-index">
+  <text class="sub">首页</text>
+
+  <navigator url="/pages/my/my">
+    <text class="nav">
+      跳转到my页面
+    </text>
+  </navigator>
+
+  <image src="../../assets/index/850018.png" class="img">
+  </image>
+
+</view>
