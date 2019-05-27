@@ -7,6 +7,7 @@ const replace = require('gulp-replace');
 const changed = require('gulp-changed');
 const autoprefixer = require('autoprefixer');
 const pxtorpx = require('postcss-px2units');
+const clean = require('gulp-clean')
 
 // 编译样式
 gulp.task('compile:style',function(){
@@ -52,5 +53,15 @@ gulp.task('watch',function(){
   gulp.watch('src/**', ['compile:style','compile:pages']);
 });
 
+// clean 任务, 情况dist目录下的内容，不删该目录
+gulp.task("clean", function () {
+  return gulp.src('./dist/*', {
+      read: false
+  })
+  .pipe(clean({force: true}));
+})
+
 //微信小程序编译
-gulp.task('default', ['watch', 'compile:style', 'compile:pages']);
+gulp.task('default', ['clean'], function () {
+  gulp.start('watch', 'compile:style', 'compile:pages');
+});
