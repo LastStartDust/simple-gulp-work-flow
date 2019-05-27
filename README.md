@@ -41,3 +41,9 @@ gulp
 + SCSS 实时编译为 WXSS
 
 + px单位转换为rpx，默认是1px转换为1rpx,具体参考 https://github.com/yingye/postcss-px2units
+
+# 其它命令
+## 清除dist目录内容
+```
+gulp clean
+```
