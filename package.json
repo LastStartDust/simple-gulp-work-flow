@@ -17,6 +17,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
-    "postcss-px2units": "^0.2.0"
+    "postcss-px2units": "^0.2.0",
+    "run-sequence": "^2.2.1"
   }
 }

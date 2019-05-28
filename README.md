@@ -23,16 +23,19 @@ gulp
 
 ```
 .
-├── gulpfile.js gulp文件
+├── gulpfile.js          // gulp配置文件
 ├── package.json
-├── src // 开发目录
-│   ├── app.js
-│   ├── app.json
-│   ├── app.scss
-│   ├── project.config.json
-│   ├── assets // 开发相关的静态文件原始资源
-│   ├── pages
-│   └── utils
+├── src                  // 开发目录
+│   ├── components           // 组件
+│   └── images               // 图片
+│   └── libs                 // 第三方包
+│   └── templates            // 模板
+│   └── utils                // 工具
+│   ├── pages                // pages目录
+│   ├── app.js               // 入口文件
+│   ├── app.json             // 公共设置
+│   ├── app.scss             // 公共样式
+│   ├── project.config.json  // 项目的编辑器配置
 └── dist // 通过src 目录编译后生成的文件目录，也是小程序开发的项目目录
 ```
 

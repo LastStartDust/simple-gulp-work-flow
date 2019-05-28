@@ -7,7 +7,8 @@ const replace = require('gulp-replace');
 const changed = require('gulp-changed');
 const autoprefixer = require('autoprefixer');
 const pxtorpx = require('postcss-px2units');
-const clean = require('gulp-clean')
+const clean = require('gulp-clean');
+const runSequence = require('run-sequence')
 
 // 编译样式
 gulp.task('compile:style',function(){
@@ -21,7 +22,8 @@ gulp.task('compile:style',function(){
         return $1
       }
     }))
-    .pipe(sass())
+    .pipe(sass()
+      .on('error', sass.logError))
     .pipe(postcss([ autoprefixer(), pxtorpx()]))
     .pipe(
       rename(function(path){
@@ -61,7 +63,8 @@ gulp.task("clean", function () {
   .pipe(clean({force: true}));
 })
 
-//微信小程序编译
+// 微信小程序编译
 gulp.task('default', ['clean'], function () {
-  gulp.start('watch', 'compile:style', 'compile:pages');
+  runSequence('watch', 'compile:style', 'compile:pages')
 });
+
